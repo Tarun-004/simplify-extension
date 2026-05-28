@@ -5,8 +5,7 @@
     "description": "Explain selected text simply.",
     "permissions": [],
     "host_permissions": [
-      "http://127.0.0.1:8000/*",
-      "http://localhost:8000/*"
+      "https://simplify-backend-k55o.onrender.com"
     ],
     "action": {
       "default_popup": "popup.html",
