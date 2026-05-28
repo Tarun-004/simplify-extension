@@ -1,4 +1,4 @@
-# ✦ Simplify
+# Simplify
 
 A minimal AI-powered Chrome extension that explains selected text in simple language instantly.
 
@@ -11,7 +11,7 @@ Simplify focuses on:
 
 ---
 
-# ✨ Features
+#  Features
 
 - Highlight any text on a webpage
 - Floating “✨ Simplify” button
@@ -24,7 +24,7 @@ Simplify focuses on:
 
 ---
 
-# 🧠 Tech Stack
+# Tech Stack
 
 ## Frontend
 - Chrome Extension (Manifest V3)
@@ -41,7 +41,7 @@ Simplify focuses on:
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 ```
 
@@ -64,12 +64,12 @@ simplify-extension/
 
 ---
 
-# ⚙️ Backend Setup
+# Backend Setup
 
 ## 1. Clone Repository
 
 ```bash
-git clone YOUR_REPO_URL
+git clone https://github.com/Tarun-004/simplify-extension.git
 ```
 
 ---
@@ -132,7 +132,7 @@ http://localhost:8000
 
 ---
 
-# 🌐 Deploying Backend (Render)
+# Deploying Backend (Render)
 
 ## Build Command
 
@@ -156,7 +156,7 @@ GROQ_API_KEY=your_api_key
 
 ---
 
-# 🧩 Loading Extension In Chrome
+# Loading Extension In Chrome
 
 1. Open Chrome
 2. Go to:
@@ -173,7 +173,7 @@ chrome://extensions
 
 ---
 
-# 🔗 Update Backend URL
+# Update Backend URL
 
 Replace localhost URLs in:
 
@@ -188,7 +188,7 @@ https://your-render-url.onrender.com/explain
 
 ---
 
-# 🚀 How It Works
+# How It Works
 
 1. User highlights text
 2. Extension displays floating simplify button
@@ -198,7 +198,7 @@ https://your-render-url.onrender.com/explain
 
 ---
 
-# 🔒 Security
+# Security
 
 - API key stored securely in backend environment variables
 - `.env` excluded using `.gitignore`
@@ -206,7 +206,7 @@ https://your-render-url.onrender.com/explain
 
 ---
 
-# 🛠 Current MVP Features
+# Current MVP Features
 
 - Minimal floating UI
 - AI explanations
@@ -217,7 +217,7 @@ https://your-render-url.onrender.com/explain
 
 ---
 
-# 📌 Future Improvements
+# Future Improvements
 
 - Keyboard shortcuts
 - Better edge positioning
@@ -227,17 +227,3 @@ https://your-render-url.onrender.com/explain
 - Smarter summarization
 
 ---
-
-# 📄 License
-
-Personal / Educational project.
-
----
-
-# ✦ Simplify Philosophy
-
-The goal is not to build a large AI assistant.
-
-The goal is:
-
-> “Help users understand difficult text instantly with minimal friction.”
