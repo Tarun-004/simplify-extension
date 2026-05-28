@@ -1,0 +1,61 @@
+/* popup.css — only loaded by popup.html, never injected into pages */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 240px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0d0d0d;
+  color: #f0f0f0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.popup-wrap {
+  padding: 18px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #444;
+  transition: background 0.4s;
+}
+.status.online  { background: #4ade80; box-shadow: 0 0 6px #4ade8088; }
+.status.offline { background: #f87171; box-shadow: 0 0 6px #f8717188; }
+
+.hint {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #999;
+}
+.hint strong { color: #e2e2e2; font-weight: 600; }
+
+.divider {
+  height: 1px;
+  background: #1e1e1e;
+}
+
+.footer {
+  font-size: 11px;
+  color: #555;
+}
+#backend-status { transition: color 0.3s; }
+#backend-status.ok  { color: #4ade80; }
+#backend-status.err { color: #f87171; }

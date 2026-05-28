@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Simplify",
+    "version": "1.0",
+    "description": "Explain selected text simply.",
+    "permissions": [],
+    "host_permissions": [
+      "http://127.0.0.1:8000/*",
+      "http://localhost:8000/*"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Simplify"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["styles.css"],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }

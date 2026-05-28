@@ -1,0 +1,119 @@
+/* ══════════════════════════════════════
+   content-script injected UI only
+   NO resets, NO body/html rules here
+   ══════════════════════════════════════ */
+
+/* Simplify button */
+.sx-btn {
+    all: initial;
+    position: absolute;
+    z-index: 2147483640;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 13px;
+    border: none;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    font-size: 12.5px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+    transition: transform 0.15s, box-shadow 0.15s;
+    animation: sx-pop 0.18s cubic-bezier(.34,1.56,.64,1) both;
+    box-sizing: border-box;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  .sx-btn:hover  { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+  .sx-btn:active { transform: scale(0.96); }
+  .sx-btn.loading { opacity: 0.7; pointer-events: none; }
+  
+  /* Result card */
+  .sx-card {
+    all: initial;
+    position: absolute;
+    z-index: 2147483639;
+    width: 300px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    overflow: hidden;
+    animation: sx-slide 0.22s cubic-bezier(.22,1,.36,1) both;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    box-sizing: border-box;
+    display: block;
+  }
+  
+  .sx-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px 8px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+  }
+  .sx-card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #888;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+  .sx-close {
+    all: initial;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0 2px;
+    transition: color 0.15s;
+    font-family: sans-serif;
+  }
+  .sx-close:hover { color: #333; }
+  
+  .sx-card-body {
+    padding: 13px 14px 15px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #222;
+    white-space: pre-wrap;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    box-sizing: border-box;
+  }
+  .sx-card-body.error { color: #c0392b; }
+  
+  /* Skeleton loader */
+  .sx-skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 13px 14px 15px;
+    box-sizing: border-box;
+  }
+  .sx-skel-line {
+    height: 11px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: sx-shimmer 1.2s infinite;
+  }
+  .sx-skel-line:nth-child(2) { width: 85%; animation-delay: 0.1s; }
+  .sx-skel-line:nth-child(3) { width: 65%; animation-delay: 0.2s; }
+  
+  /* Keyframes */
+  @keyframes sx-pop {
+    from { opacity: 0; transform: scale(0.85) translateY(4px); }
+    to   { opacity: 1; transform: scale(1)    translateY(0);   }
+  }
+  @keyframes sx-slide {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+  @keyframes sx-shimmer {
+    to { background-position: -200% 0; }
+  }
