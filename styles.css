@@ -3,117 +3,204 @@
    NO resets, NO body/html rules here
    ══════════════════════════════════════ */
 
-/* Simplify button */
+/* ── Simplify trigger button ── */
 .sx-btn {
-    all: initial;
-    position: absolute;
-    z-index: 2147483640;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 6px 13px;
-    border: none;
-    border-radius: 999px;
-    background: #111;
-    color: #fff;
-    font-size: 12.5px;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.28);
-    transition: transform 0.15s, box-shadow 0.15s;
-    animation: sx-pop 0.18s cubic-bezier(.34,1.56,.64,1) both;
-    box-sizing: border-box;
-    line-height: normal;
-    white-space: nowrap;
-  }
-  .sx-btn:hover  { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
-  .sx-btn:active { transform: scale(0.96); }
-  .sx-btn.loading { opacity: 0.7; pointer-events: none; }
-  
-  /* Result card */
-  .sx-card {
-    all: initial;
-    position: absolute;
-    z-index: 2147483639;
-    width: 300px;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
-    overflow: hidden;
-    animation: sx-slide 0.22s cubic-bezier(.22,1,.36,1) both;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    box-sizing: border-box;
-    display: block;
-  }
-  
-  .sx-card-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 14px 8px;
-    background: #f8f8f8;
-    border-bottom: 1px solid #eee;
-    box-sizing: border-box;
-  }
-  .sx-card-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #888;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-  }
-  .sx-close {
-    all: initial;
-    cursor: pointer;
-    color: #aaa;
-    font-size: 16px;
-    line-height: 1;
-    padding: 0 2px;
-    transition: color 0.15s;
-    font-family: sans-serif;
-  }
-  .sx-close:hover { color: #333; }
-  
-  .sx-card-body {
-    padding: 13px 14px 15px;
-    font-size: 13.5px;
-    line-height: 1.65;
-    color: #222;
-    white-space: pre-wrap;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    box-sizing: border-box;
-  }
-  .sx-card-body.error { color: #c0392b; }
-  
-  /* Skeleton loader */
-  .sx-skeleton {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    padding: 13px 14px 15px;
-    box-sizing: border-box;
-  }
-  .sx-skel-line {
-    height: 11px;
-    border-radius: 6px;
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: sx-shimmer 1.2s infinite;
-  }
-  .sx-skel-line:nth-child(2) { width: 85%; animation-delay: 0.1s; }
-  .sx-skel-line:nth-child(3) { width: 65%; animation-delay: 0.2s; }
-  
-  /* Keyframes */
-  @keyframes sx-pop {
-    from { opacity: 0; transform: scale(0.85) translateY(4px); }
-    to   { opacity: 1; transform: scale(1)    translateY(0);   }
-  }
-  @keyframes sx-slide {
-    from { opacity: 0; transform: translateY(-6px); }
-    to   { opacity: 1; transform: translateY(0);    }
-  }
-  @keyframes sx-shimmer {
-    to { background-position: -200% 0; }
-  }
+  all: initial;
+  position: absolute;
+  z-index: 2147483640;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 13px;
+  border: none;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-size: 12.5px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+  transition: transform 0.15s, box-shadow 0.15s;
+  animation: sx-pop 0.18s cubic-bezier(.34,1.56,.64,1) both;
+  box-sizing: border-box;
+  line-height: normal;
+  white-space: nowrap;
+}
+.sx-btn:hover  { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+.sx-btn:active { transform: scale(0.96); }
+
+/* ══════════════════════════════════════
+   Card — light mode (default)
+   ══════════════════════════════════════ */
+.sx-card {
+  all: initial;
+  position: absolute;
+  z-index: 2147483639;
+  width: 310px;
+  border-radius: 14px;
+  overflow: hidden;
+  animation: sx-slide 0.22s cubic-bezier(.22,1,.36,1) both;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  box-sizing: border-box;
+  display: block;
+
+  /* light */
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* ── Dark mode overrides via data attribute ── */
+.sx-card[data-sx-dark="true"] {
+  background: #1a1a1a;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+/* ── Header ── */
+.sx-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px 8px;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  background: #f8f8f8;
+  gap: 6px;
+  cursor: grab;
+  user-select: none;
+}
+.sx-card-head:active { cursor: grabbing; }
+.sx-dragging { cursor: grabbing !important; user-select: none; }
+.sx-dragging * { pointer-events: none; }
+.sx-card[data-sx-dark="true"] .sx-card-head {
+  background: #242424;
+  border-bottom-color: #333;
+}
+
+.sx-card-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #888;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.sx-card[data-sx-dark="true"] .sx-card-label { color: #666; }
+
+/* ── History nav ── */
+.sx-nav {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+.sx-nav-count {
+  font-size: 10.5px;
+  color: #999;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-width: 24px;
+  text-align: center;
+  line-height: 1;
+}
+.sx-card[data-sx-dark="true"] .sx-nav-count { color: #666; }
+
+.sx-nav-btn {
+  all: initial;
+  cursor: pointer;
+  color: #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  box-sizing: border-box;
+}
+.sx-nav-btn:hover:not(:disabled) { color: #444; background: #eee; }
+.sx-nav-btn:disabled { opacity: 0.25; cursor: default; }
+.sx-card[data-sx-dark="true"] .sx-nav-btn:hover:not(:disabled) {
+  color: #ddd; background: #333;
+}
+
+/* ── Right actions ── */
+.sx-actions {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+.sx-icon-btn {
+  all: initial;
+  cursor: pointer;
+  color: #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  transition: color 0.15s, background 0.15s;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+.sx-icon-btn:hover { color: #444; background: #eee; }
+.sx-icon-btn.copied { color: #22c55e; }
+.sx-icon-btn.sx-close:hover { color: #e53e3e; background: #fff0f0; }
+
+.sx-card[data-sx-dark="true"] .sx-icon-btn { color: #555; }
+.sx-card[data-sx-dark="true"] .sx-icon-btn:hover { color: #ccc; background: #333; }
+.sx-card[data-sx-dark="true"] .sx-icon-btn.sx-close:hover { color: #fc8181; background: #2d1f1f; }
+
+/* ── Body ── */
+.sx-card-body {
+  padding: 13px 14px 15px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #222;
+  white-space: pre-wrap;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  box-sizing: border-box;
+}
+.sx-card-body.error { color: #c0392b; }
+.sx-card[data-sx-dark="true"] .sx-card-body { color: #ddd; }
+.sx-card[data-sx-dark="true"] .sx-card-body.error { color: #fc8181; }
+
+/* ── Skeleton loader ── */
+.sx-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 13px 14px 15px;
+  box-sizing: border-box;
+}
+.sx-skel-line {
+  height: 11px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e4e4e4 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: sx-shimmer 1.2s infinite;
+}
+.sx-card[data-sx-dark="true"] .sx-skel-line {
+  background: linear-gradient(90deg, #2a2a2a 25%, #333 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+}
+.sx-skel-line:nth-child(2) { width: 85%; animation-delay: 0.1s; }
+.sx-skel-line:nth-child(3) { width: 65%; animation-delay: 0.2s; }
+
+/* ── Keyframes ── */
+@keyframes sx-pop {
+  from { opacity: 0; transform: scale(0.85) translateY(4px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);   }
+}
+@keyframes sx-slide {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes sx-shimmer {
+  to { background-position: -200% 0; }
+}
